@@ -1,19 +1,23 @@
 export type Repository = {
-  id: string;
+  id: number;
   title: string;
-  description: string;
-  language: string;
+  description?: string | null;
+  language?: string | null;
   forksCount: number;
   openIssuesCount: number;
   watchersCount: number;
+  stargazersCount: number;
+  htmlUrl: string;
 };
 
 export type ApiRepository = {
-  id: string;
+  id: number;
   name: string;
-  description: string;
-  language: string;
+  description?: string | null;
+  language?: string | null;
   forks_count: number;
   open_issues_count: number;
   watchers_count: number;
+  stargazers_count: number;
+  html_url: string;
 };

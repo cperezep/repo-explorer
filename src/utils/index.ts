@@ -9,5 +9,7 @@ export function mapApiRepositoryToRepository(apiRepository: ApiRepository): Repo
     forksCount: apiRepository.forks_count,
     openIssuesCount: apiRepository.open_issues_count,
     watchersCount: apiRepository.watchers_count,
+    stargazersCount: apiRepository.stargazers_count,
+    htmlUrl: apiRepository.html_url,
   };
 }
