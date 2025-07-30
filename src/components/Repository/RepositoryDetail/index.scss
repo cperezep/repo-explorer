@@ -1,0 +1,183 @@
+.repository-detail {
+  min-height: calc(100vh - 60px);
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+  width: 100%;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  &__header {
+    margin-bottom: 2rem;
+  }
+
+  &__back-btn {
+    background: #007acc;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background: #005a99;
+    }
+
+    &:focus {
+      outline: 2px solid #007acc;
+      outline-offset: 2px;
+    }
+  }
+
+  &__title-section {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 0.5rem 0;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__description,
+  &__stats,
+  &__info {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 1rem 0;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  &__stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+
+  &__label {
+    color: #666;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__value {
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__label {
+    color: #666;
+    font-weight: 500;
+  }
+
+  &__value {
+    color: #333;
+    font-weight: 600;
+  }
+}
+
+.action-btn {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+
+  &--primary {
+    background: #007acc;
+    color: white;
+
+    &:hover {
+      background: #005a99;
+    }
+  }
+
+  &:focus {
+    outline: 2px solid #007acc;
+    outline-offset: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .repository-detail {
+    &__content {
+      grid-template-columns: 1fr;
+    }
+
+    &__stats-grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+  }
+}

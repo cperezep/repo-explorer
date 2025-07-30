@@ -1,28 +1,30 @@
 import React from 'react';
-import { useRepositories } from '../../hooks/useRepositories';
-import RepositoryList from './RepositoryList';
+import { useParams } from 'react-router-dom';
+import RepositoryDetail from './RepositoryDetail';
 import Spinner from '../Spinner';
-import RepositoryError from './RepositoryError';
-import type { Repository as RepositoryType } from '../../types';
-import EmptyRepositories from './EmptyRepositories';
+import Message from '../Message';
+import { useRepository } from '../../hooks/useRepository';
+import type { Repository as RepositoryT } from '../../types';
+
 import './index.scss';
 
-type RepositoryContentProps = {
-  data: RepositoryType[];
+type RepositoryDetailProps = {
+  data?: RepositoryT;
   isLoading: boolean;
   error: Error | null;
 };
 
-const RepositoryContent: React.FC<RepositoryContentProps> = ({ data, isLoading, error }) => {
+const RepositoryContent: React.FC<RepositoryDetailProps> = ({ data, isLoading, error }) => {
   if (isLoading) return <Spinner />;
-  if (error) return <RepositoryError message={error.message} />;
-  if (!data.length) return <EmptyRepositories />;
+  if (error) return <Message title={`Error loading repository: ${error.message}`} />;
+  if (!data) return <Message title="Repository found" />;
 
-  return <RepositoryList repositories={data} />;
+  return <RepositoryDetail repository={data} />;
 };
 
 const Repository: React.FC = () => {
-  const { data = [], isLoading, error } = useRepositories();
+  const { repo } = useParams<{ repo: string }>();
+  const { data, isLoading, error } = useRepository(repo!);
 
   return (
     <section className="repository-layout">

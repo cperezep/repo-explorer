@@ -1,13 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchRepositories } from '../../api/services/github.service';
 
-const DEFAULT_ORG = 'godaddy';
-
-export const useRepositories = (org: string = DEFAULT_ORG) => {
+export const useRepositories = () => {
   return useQuery({
-    queryKey: ['repositories', org],
-    queryFn: () => fetchRepositories(org),
-    enabled: org.trim().length > 0,
+    queryKey: ['repositories'],
+    queryFn: () => fetchRepositories(),
     staleTime: 10 * 60 * 1000, // 10 minutes
   });
 };
