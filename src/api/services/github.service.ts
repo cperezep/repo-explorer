@@ -2,7 +2,7 @@ import type { ApiRepository, Repository } from '../../types';
 import { mapApiRepositoryToRepository } from '../../utils';
 import request from '../client/request';
 
-const DEFAULT_ORG = 'godaddy';
+export const DEFAULT_ORG = 'godaddy';
 
 export async function fetchRepositories(org: string = DEFAULT_ORG): Promise<Array<Repository>> {
   const { data } = await request<Array<ApiRepository>>('GET', `orgs/${org}/repos`);
