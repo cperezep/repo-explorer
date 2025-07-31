@@ -16,7 +16,7 @@ const RepositoryGrid: React.FC<RepositoryGridProps> = ({ repositories }) => {
   };
 
   return (
-    <div className="repository-list">
+    <div className="repository-list" data-testid="repository-list">
       <h2 className="repository-list__title">Repositories</h2>
       <p className="repository-list__subtitle">
         {repositories.length} {repositories.length === 1 ? 'repository' : 'repositories'}
@@ -28,12 +28,11 @@ const RepositoryGrid: React.FC<RepositoryGridProps> = ({ repositories }) => {
             key={repository.id}
             className="repository-item"
             onClick={() => handleRepositoryClick(repository)}
-            tabIndex={0}
             role="button"
             aria-label={`View details for ${repository.title} repository`}
           >
             <h3 className="repository-item__title">{repository.title}</h3>
-            <p className="repository-item__description">{repository.description || ''}</p>
+            <p className="repository-item__description">{repository.description ?? 'No description available'}</p>
           </li>
         ))}
       </ul>

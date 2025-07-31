@@ -71,6 +71,7 @@ describe('RepositoryDetail', () => {
     expect(backButton).toBeInTheDocument();
     expect(backButton).toHaveAttribute('aria-label', 'Go back to repository list');
   });
+
   it('displays fallback text when description is not defined', () => {
     const repoWithoutDescription: Repository = {
       ...mockRepository,
