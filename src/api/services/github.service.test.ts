@@ -1,17 +1,19 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { mockApiRepository, mockApiRepositoryMinimal, mockRepository, mockRepositoryMinimal } from 'src/__mocks__';
+import request from 'src/api/client/request';
+
 import { DEFAULT_ORG, fetchRepositories, fetchRepository } from './github.service';
-import { mockApiRepository, mockApiRepositoryMinimal, mockRepository, mockRepositoryMinimal } from '../../__mocks__';
-import request from '../client/request';
+import { AxiosHeaders } from 'axios';
 
 vi.mock('../client/request');
 
 describe('github.service', () => {
-  const mockResponse = (data: any, status = 200, statusText = 'OK') => ({
+  const mockResponse = (data: unknown, status = 200, statusText = 'OK') => ({
     data,
     status,
     statusText,
     headers: {},
-    config: {} as any,
+    config: { headers: new AxiosHeaders() },
   });
 
   beforeEach(() => {

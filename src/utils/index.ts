@@ -1,4 +1,4 @@
-import type { ApiRepository, Repository } from '../types';
+import type { ApiRepository, Repository } from 'src/types';
 
 export function mapApiRepositoryToRepository(apiRepository: ApiRepository): Repository {
   return {

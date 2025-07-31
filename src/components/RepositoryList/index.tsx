@@ -1,9 +1,9 @@
 import React from 'react';
-import { useRepositories } from '../../hooks/useRepositories';
 import RepositoryGrid from './RepositoryGrid';
 import Spinner from '../Spinner';
 import Message from '../Message';
-import type { Repository } from '../../types';
+import { useRepositories } from 'src/hooks/useRepositories';
+import type { Repository } from 'src/types';
 
 import './index.scss';
 

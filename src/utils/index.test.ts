@@ -5,7 +5,8 @@ import {
   mockApiRepositoryMinimal,
   mockRepositoryMinimal,
   mockApiRepositoryPairs,
-} from '../__mocks__';
+} from 'src/__mocks__';
+
 import { mapApiRepositoryToRepository } from '.';
 
 describe('mapApiRepositoryToRepository', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import type { Repository } from '../../../types';
+import type { Repository } from 'src/types';
 
 import './index.scss';
 

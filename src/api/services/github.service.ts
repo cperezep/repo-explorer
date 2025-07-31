@@ -1,6 +1,6 @@
-import type { ApiRepository, Repository } from '../../types';
-import { mapApiRepositoryToRepository } from '../../utils';
-import request from '../client/request';
+import type { ApiRepository, Repository } from 'src/types';
+import { mapApiRepositoryToRepository } from 'src/utils';
+import request from 'src/api/client/request';
 
 export const DEFAULT_ORG = 'godaddy';
 

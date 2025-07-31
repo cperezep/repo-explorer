@@ -1,6 +1,6 @@
+import axios, { AxiosHeaders, type AxiosResponse } from 'axios';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import axios, { AxiosHeaders } from 'axios';
-import type { AxiosResponse } from 'axios';
+import { mockApiRepository } from 'src/__mocks__';
 
 import request from './request';
 
@@ -11,13 +11,7 @@ describe('request', () => {
 
   const mockUrl = '/test-endpoint';
   const mockResponse: AxiosResponse = {
-    data: {
-      id: 1,
-      name: 'Test User',
-      email: 'test@example.com',
-      created_at: '2024-01-01T00:00:00Z',
-      updated_at: '2024-01-01T00:00:00Z',
-    },
+    data: mockApiRepository,
     status: 200,
     statusText: 'OK',
     headers: {},

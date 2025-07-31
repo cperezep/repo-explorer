@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import RepositoryDetail from './RepositoryDetail';
 import Spinner from '../Spinner';
 import Message from '../Message';
-import { useRepository } from '../../hooks/useRepository';
-import type { Repository as RepositoryT } from '../../types';
+import { useRepository } from 'src/hooks/useRepository';
+import type { Repository as RepositoryT } from 'src/types';
 
 import './index.scss';
 

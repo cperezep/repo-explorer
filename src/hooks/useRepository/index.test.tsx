@@ -1,12 +1,12 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { renderHook, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { fetchRepository } from '../../api/services/github.service';
-import { mockRepository } from '../../__mocks__';
+import { fetchRepository } from 'src/api/services/github.service';
+import { mockRepository } from 'src/__mocks__';
 
 import { useRepository } from '.';
 
-vi.mock('../../api/services/github.service', () => ({
+vi.mock('src/api/services/github.service', () => ({
   fetchRepository: vi.fn(),
 }));
 

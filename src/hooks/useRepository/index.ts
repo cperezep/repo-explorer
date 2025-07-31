@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchRepository } from '../../api/services/github.service';
+import { fetchRepository } from 'src/api/services/github.service';
 
 export const useRepository = (repo: string) => {
   return useQuery({
