@@ -44,7 +44,7 @@ describe('Repository Detail Page', () => {
 
     cy.wait('@getRepository');
 
-    cy.get('.repository-detail__back-btn').click();
+    cy.get('.repository-detail__back').click();
 
     cy.url().should('eq', `${Cypress.config().baseUrl}/`);
     cy.get('[data-testid="repository-list"]').should('be.visible');

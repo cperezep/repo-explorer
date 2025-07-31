@@ -20,7 +20,7 @@ describe('Application Navigation and Routing', () => {
     cy.url().should('include', '/repository/');
     cy.get('[data-testid="repository-detail"]').should('be.visible');
 
-    cy.get('.repository-detail__back-btn').click();
+    cy.get('.repository-detail__back').click();
 
     cy.url().should('eq', `${Cypress.config().baseUrl}/`);
     cy.get('[data-testid="repository-list"]').should('be.visible');

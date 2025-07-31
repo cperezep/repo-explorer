@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import type { Repository } from 'src/types';
 
 import './index.scss';
@@ -9,12 +9,6 @@ type RepositoryGridProps = {
 };
 
 const RepositoryGrid: React.FC<RepositoryGridProps> = ({ repositories }) => {
-  const navigate = useNavigate();
-
-  const handleRepositoryClick = ({ title }: Repository) => {
-    navigate(`/repository/${title}`);
-  };
-
   return (
     <div className="repository-list" data-testid="repository-list">
       <h2 className="repository-list__title">Repositories</h2>
@@ -24,15 +18,15 @@ const RepositoryGrid: React.FC<RepositoryGridProps> = ({ repositories }) => {
 
       <ul className="repository-list__items">
         {repositories.map((repository) => (
-          <li
-            key={repository.id}
-            className="repository-item"
-            onClick={() => handleRepositoryClick(repository)}
-            role="button"
-            aria-label={`View details for ${repository.title} repository`}
-          >
-            <h3 className="repository-item__title">{repository.title}</h3>
-            <p className="repository-item__description">{repository.description ?? 'No description available'}</p>
+          <li key={repository.id} className="repository-item">
+            <Link
+              to={`/repository/${repository.title}`}
+              className="repository-item__link"
+              aria-label={`View details for ${repository.title} repository`}
+            >
+              <h3 className="repository-item__title">{repository.title}</h3>
+              <p className="repository-item__description">{repository.description ?? 'No description available'}</p>
+            </Link>
           </li>
         ))}
       </ul>

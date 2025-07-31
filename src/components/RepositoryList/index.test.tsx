@@ -47,7 +47,7 @@ describe('RepositoryList', () => {
 
     expect(screen.getByRole('heading', { name: 'Repositories', level: 2 })).toBeInTheDocument();
     expect(screen.getByRole('list')).toBeInTheDocument();
-    expect(screen.getAllByRole('button')).toHaveLength(2);
+    expect(screen.getAllByRole('link')).toHaveLength(2);
   });
 
   it('displays spinner when loading repositories', () => {

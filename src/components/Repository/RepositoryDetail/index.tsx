@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import type { Repository } from 'src/types';
 
 import './index.scss';
@@ -8,19 +8,13 @@ type RepositoryDetailProps = {
 };
 
 const RepositoryDetail: React.FC<RepositoryDetailProps> = ({ repository }) => {
-  const navigate = useNavigate();
-
   return (
     <div className="repository-detail" data-testid="repository-detail">
       <div className="repository-detail__container">
         <div className="repository-detail__header">
-          <button
-            className="repository-detail__back-btn"
-            onClick={() => navigate('/')}
-            aria-label="Go back to repository list"
-          >
+          <Link to={`/`} className="repository-detail__back" aria-label="Go back to repository list">
             Back to Repositories
-          </button>
+          </Link>
 
           <div className="repository-detail__title-section">
             <h1 className="repository-detail__title">{repository.title}</h1>

@@ -14,17 +14,16 @@
     margin-bottom: 2rem;
   }
 
-  &__back-btn {
+  &__back {
     align-items: center;
     background: none;
-    border: none;
     color: #0969da;
-    cursor: pointer;
     display: inline-flex;
     font-size: 14px;
     gap: 4px;
     margin-bottom: 16px;
     padding: 4px 0;
+    text-decoration: none;
 
     &::before {
       content: '←';
@@ -142,11 +141,9 @@
 
 .action-btn {
   align-items: center;
-  background: transparent;
   border: 1px solid #d1d9e0;
   border-radius: 6px;
   color: #0969da;
-  cursor: pointer;
   display: inline-flex;
   font-size: 14px;
   font-weight: 500;
@@ -170,10 +167,6 @@
   &:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
-  }
-
-  &:active {
-    transform: translateY(0);
   }
 }
 

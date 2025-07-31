@@ -1,20 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import type { Repository } from 'src/types';
 import { mockRepository } from 'src/__mocks__';
 
 import RepositoryDetail from '.';
-
-const mockNavigate = vi.fn();
-vi.mock('react-router-dom', async () => {
-  const actual = await vi.importActual('react-router-dom');
-  return {
-    ...actual,
-    useNavigate: () => mockNavigate,
-  };
-});
 
 describe('RepositoryDetail', () => {
   const renderComponent = (repository: Repository = mockRepository) => {
@@ -66,10 +56,10 @@ describe('RepositoryDetail', () => {
   it('renders back button with correct accessibility attributes', () => {
     renderComponent();
 
-    const backButton = screen.getByRole('button', { name: 'Go back to repository list' });
+    const backLink = screen.getByRole('link', { name: 'Go back to repository list' });
 
-    expect(backButton).toBeInTheDocument();
-    expect(backButton).toHaveAttribute('aria-label', 'Go back to repository list');
+    expect(backLink).toBeInTheDocument();
+    expect(backLink).toHaveAttribute('aria-label', 'Go back to repository list');
   });
 
   it('displays fallback text when description is not defined', () => {
@@ -94,14 +84,13 @@ describe('RepositoryDetail', () => {
     expect(screen.getByText('Not specified')).toBeInTheDocument();
   });
 
-  it('calls navigate with "/" when back button is clicked', async () => {
+  it('renders back link with correct href', () => {
     renderComponent();
 
-    const backButton = screen.getByRole('button', { name: 'Go back to repository list' });
-    await userEvent.click(backButton);
+    const backLink = screen.getByRole('link', { name: 'Go back to repository list' });
 
-    expect(mockNavigate).toHaveBeenCalledTimes(1);
-    expect(mockNavigate).toHaveBeenCalledWith('/');
+    expect(backLink).toBeInTheDocument();
+    expect(backLink).toHaveAttribute('href', '/');
   });
 
   it('opens GitHub link in new tab when clicked', async () => {
