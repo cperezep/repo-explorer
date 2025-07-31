@@ -17,7 +17,7 @@ type RepositoryDetailProps = {
 const RepositoryContent: React.FC<RepositoryDetailProps> = ({ data, isLoading, error }) => {
   if (isLoading) return <Spinner />;
   if (error) return <Message title={`Error loading repository: ${error.message}`} />;
-  if (!data) return <Message title="Repository found" />;
+  if (!data) return <Message title="Repository not found" />;
 
   return <RepositoryDetail repository={data} />;
 };

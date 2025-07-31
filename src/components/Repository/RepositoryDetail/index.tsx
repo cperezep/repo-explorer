@@ -11,7 +11,7 @@ const RepositoryDetail: React.FC<RepositoryDetailProps> = ({ repository }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="repository-detail">
+    <div className="repository-detail" data-testid="repository-detail">
       <div className="repository-detail__container">
         <div className="repository-detail__header">
           <button
