@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import type { Repository } from '../../../types';
+import type { Repository } from 'src/types';
 
 import './index.scss';
 
@@ -19,7 +19,7 @@ const RepositoryDetail: React.FC<RepositoryDetailProps> = ({ repository }) => {
             onClick={() => navigate('/')}
             aria-label="Go back to repository list"
           >
-            ← Back to Repositories
+            Back to Repositories
           </button>
 
           <div className="repository-detail__title-section">
@@ -62,17 +62,12 @@ const RepositoryDetail: React.FC<RepositoryDetailProps> = ({ repository }) => {
               <h2>Repository Info</h2>
               <div className="info-item">
                 <span className="info-item__label">Language</span>
-                <span className="info-item__value">{repository.language ?? 'Not specified'}</span>
+                <p>{repository.language ?? 'Not specified'}</p>
               </div>
             </div>
 
             <div className="repository-detail__actions">
-              <a
-                href={repository.htmlUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="action-btn action-btn--primary"
-              >
+              <a href={repository.htmlUrl} target="_blank" rel="noopener noreferrer" className="action-btn">
                 View on GitHub
               </a>
             </div>
