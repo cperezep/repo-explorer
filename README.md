@@ -25,7 +25,7 @@ A React application for exploring GitHub repositories for GoDaddy org. Built wit
 
 ```bash
 git clone https://github.com/cperezep/repo-explorer.git
-cd repoexplorer
+cd repo-explorer
 ```
 
 2. Install dependencies:
