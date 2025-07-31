@@ -90,11 +90,13 @@ pnpm run test:coverage
 Run e2e tests with Cypress:
 
 ```bash
-# Open Cypress interactive mode
+# 1. Init server
+pnpm dev
+# 2. Open Cypress interactive mode
 pnpm run cypress:open
 
 # Run Cypress tests headlessly
-pnpm run cypress:run
+pnpm run test:e2e
 ```
 
 ### Run All Tests
@@ -153,10 +155,10 @@ React Testing Library was chosen as the unit testing approach because it encoura
 
 ```
 src/
-├── api/                    # API layer
-│   ├── client/            # HTTP client configuration
-│   └── services/          # API service functions
-├── components/            # Reusable UI components
+├── api/                  # API layer
+│   ├── client/           # HTTP client configuration
+│   └── services/         # API service functions
+├── components/           # Reusable UI components
 ├── hooks/                # Custom React hooks
 ├── types/                # TypeScript type definitions
 ├── utils/                # Utility functions

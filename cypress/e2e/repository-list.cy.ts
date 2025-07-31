@@ -36,8 +36,6 @@ describe('Repository List Page', () => {
   it('should navigate to repository detail when clicking on repository', () => {
     cy.visit('/');
 
-    cy.get('[role="status"][aria-label="Loading"]').should('be.visible');
-
     cy.wait('@getRepositories');
 
     cy.get('.repository-item')

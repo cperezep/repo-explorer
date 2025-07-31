@@ -20,11 +20,15 @@ export default defineConfig({
     coverage: {
       exclude: [
         'node_modules/**',
+        'coverage/**',
+        'cypress/**',
+        'dist/**',
         '**/*.d.ts',
         'src/types/**',
         'src/__mocks__/**',
         'eslint.config.js',
         'vite.config.ts',
+        'cypress.config.mjs',
       ],
     },
   },
