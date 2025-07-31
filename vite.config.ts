@@ -18,7 +18,14 @@ export default defineConfig({
     environment: 'jsdom', // Specifies the JSDOM environment for browser-like testing
     setupFiles: ['./src/setupTests.ts'], // Path to your test setup file
     coverage: {
-      exclude: ['src/__mocks__/**', 'src/types/**', 'node_modules/**', '**/*.d.ts'],
+      exclude: [
+        'node_modules/**',
+        '**/*.d.ts',
+        'src/types/**',
+        'src/__mocks__/**',
+        'eslint.config.js',
+        'vite.config.ts',
+      ],
     },
   },
 });
