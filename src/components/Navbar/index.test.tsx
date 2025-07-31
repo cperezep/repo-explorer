@@ -6,6 +6,7 @@ import { Navbar } from '.';
 describe('Navbar', () => {
   it('renders properly', () => {
     render(<Navbar />);
-    expect(screen.getByRole('navigation')).toBeInTheDocument();
+
+    expect(screen.getByRole('navigation', { name: 'Main navigation' })).toBeInTheDocument();
   });
 });

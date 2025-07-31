@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import { ErrorBoundary } from '.';
 
@@ -42,7 +42,7 @@ describe('ErrorBoundary', () => {
       </ErrorBoundary>
     );
 
-    await userEvent.click(screen.getByRole('button', { name: 'Try again' }));
+    await userEvent.click(screen.getByRole('button', { name: /try again and reload the page/i }));
 
     expect(onReset).toHaveBeenCalled();
   });
